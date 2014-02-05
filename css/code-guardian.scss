@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+/*
+* This work is based on Inuit
+* https://github.com/csswizardry/inuit.css
+*/
+
+$error: red;
+$warning: yellow;
+
+@mixin highlite($color, $text) {
+	position: relative;
+	outline: 5px dashed $color !important;
+
+	&:before {
+		content: $text;
+		background: $color;
+		display: block;
+		position: absolute;
+		top: -1em;
+		right: 0;
+		padding: 0 .4em;
+		color: darken($color, 50%);
+	}
+}
+
+/* @group Highlight inline styles
+  --------------------------------------------------------------------------- */
+
+styles {
+	display: block;
+}
+
+[style],
+style {
+	@include highlite($error, 'inline styles');
+}
+
+/* @end */
+
+/* @group Highlight empty id and clases
+  --------------------------------------------------------------------------- */
+
+[id] {
+	@include highlite($warning, 'I have a ID');
+}
+
+/* @end */
+
+/* @group Highlight empty element
+  --------------------------------------------------------------------------- */
+
+:empty{
+	@include highlite($warning, 'empty element');
+}
+
+/* @end */

@@ -1,0 +1,57 @@
+/*
+* This work is based on Inuit
+* https://github.com/csswizardry/inuit.css
+*/
+/* @group Highlight inline styles
+  --------------------------------------------------------------------------- */
+styles {
+  display: block; }
+
+[style],
+style {
+  position: relative;
+  outline: 5px dashed red !important; }
+  [style]:before,
+  style:before {
+    content: "inline styles";
+    background: red;
+    display: block;
+    position: absolute;
+    top: -1em;
+    right: 0;
+    padding: 0 .4em;
+    color: black; }
+
+/* @end */
+/* @group Highlight empty id and clases
+  --------------------------------------------------------------------------- */
+[id] {
+  position: relative;
+  outline: 5px dashed yellow !important; }
+  [id]:before {
+    content: "I have a ID";
+    background: yellow;
+    display: block;
+    position: absolute;
+    top: -1em;
+    right: 0;
+    padding: 0 .4em;
+    color: black; }
+
+/* @end */
+/* @group Highlight empty element
+  --------------------------------------------------------------------------- */
+:empty {
+  position: relative;
+  outline: 5px dashed yellow !important; }
+  :empty:before {
+    content: "empty element";
+    background: yellow;
+    display: block;
+    position: absolute;
+    top: -1em;
+    right: 0;
+    padding: 0 .4em;
+    color: black; }
+
+/* @end */

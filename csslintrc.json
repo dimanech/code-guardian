@@ -1,0 +1,18 @@
+{
+	"star-property-hack" : true,
+	"underscore-property-hack" : true,
+
+	"important" : false,
+	"zero-units": false,
+
+	"adjoining-classes" : false,
+	"box-model" : false,
+	"box-sizing" : false,
+	"compatible-vendor-prefixes" : false,
+	"empty-rules" : false,
+	"font-faces" : false,
+	"gradients" : false,
+
+	"qualified-headings": false,
+	"unique-headings" : false
+}
