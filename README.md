@@ -10,6 +10,7 @@ Requaired: nodejs, npm
  npm install gulp
  npm install gulp-util
  npm install gulp-csslint
+ npm install map-stream
 
  cp pre-commit ./.git/hooks/
 
