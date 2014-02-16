@@ -1,0 +1,21 @@
+{
+	"name": "code-guardian",
+	"version": "0.0.1",
+	"main": "Gruntfile.js",
+	"devDependencies": {
+		"grunt-contrib-csslint": "~0.2.0",
+		"grunt-githooks": "~0.3.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/dimanech/code-guardian.git"
+	},
+	"author": "Dmytro Nechepurenko",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/dimanech/code-guardian/issues"
+	},
+	"scripts": {
+		"postinstall": "grunt githooks"
+	}
+}
