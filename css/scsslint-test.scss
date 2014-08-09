@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+* {
+	color: #000;
+}
+
+html {
+	*background-color: white;
+	_background-color: white;
+}
+
+body {
+	background-image: none;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-color: white;
+}
+
+a[href*='google.com'] {
+	color: green;
+}
+
+html body .test.test_block #id {
+	margin: 0px 0em;
+}
+
+#id {
+	outline: none;
+}

@@ -2,12 +2,10 @@
 #
 # Pre-commit hooks
 
-# Lint stuff before committing
-
-gulp csslinting
+gulp
 
 if [ $? -ne 0 ]; then
  echo "Gulp precommit failed, please fix code and recommit"
  exit 1
 fi
-exit 0
+ exit 0
