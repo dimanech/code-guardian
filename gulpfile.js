@@ -1,7 +1,6 @@
 var gulp = require('gulp'),
 	gutil = require('gulp-util'),
 	csslint = require('gulp-csslint'),
-	map = require('map-stream'),
 	scsslint = require('gulp-scss-lint'),
 	cssSource = 'css_good/*.css',
 	scssSource = 'css_good/*.scss';
