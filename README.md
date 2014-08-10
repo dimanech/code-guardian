@@ -1,5 +1,5 @@
 # Code Guardian
-Deveolped by Dmytro Nechepurenko. Distributed by MIT license.
+Developed by Dmytro Nechepurenko. Distributed by MIT license.
 
 ## About
 Code guardian is example of gulp-based set for code review process.
