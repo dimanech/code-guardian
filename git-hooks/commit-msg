@@ -1,0 +1,8 @@
+#!/bin/sh
+
+commit_regex='(TB2-[0-9]+):\s(.*)'
+
+if ! grep -qE "$commit_regex" "$1"; then
+    echo "[GUARD]: Aborting commit. Your commit message not match pattern 'TASK-0001: Ticket description'"
+    exit 1
+fi

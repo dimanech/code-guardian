@@ -1,24 +1,12 @@
-# Code Guardian
-Deveolped by Dmytro Nechepurenko. Distributed by MIT license.
+#Code Guardian
+To run all contained in this repo tasks you need ruby and node.js instaled on your system. 
 
-## About
-Code guardian is example grunt-based set for code review process.
+To install all tasks and git hooks just do that:
+```
+bundle install
+npm install -g grunt-cli csslint
+npm install // you should have administrative privileges to make symlink on Windows
+```
+Git hooks contain file encoding, line ending and non-ascii characters checker, commit message pattern validation and scss linting. 
 
-## Installation
-Requaired: nodejs, npm
-
-### Grunt
-
-	npm install
-
-or:
-
-	npm install -g  grunt-cli
-	npm install grunt --save-dev
-	npm install grunt-contrib-csslint --save-dev
-	npm install grunt-githooks --save-dev
-
-	grunt githooks #to create the hook
-
-## Start manually
- grunt
+You can extend this with any other scripts if you need it. For example to add another lineter/checker on pre-commit hook just put your file into git-hook folder and add file name to git-hooks/pre-commit. Then run "grunt hooksInstall" to make symlink to .git/hooks folder.

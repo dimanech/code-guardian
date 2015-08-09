@@ -1,21 +1,23 @@
 {
-	"name": "code-guardian",
-	"version": "0.0.1",
-	"main": "Gruntfile.js",
-	"devDependencies": {
-		"grunt-contrib-csslint": "~0.2.0",
-		"grunt-githooks": "~0.3.1"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/dimanech/code-guardian.git"
-	},
-	"author": "Dmytro Nechepurenko",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/dimanech/code-guardian/issues"
-	},
+  "name": "Code-guardian",
+  "version": "0.0.0",
+  "description": "Code guardian",
+  "main": "Gruntfile.js",
+  "dependencies": {},
+  "devDependencies": {
+	  "grunt": "~0.4.5",
+	  "grunt-contrib-csslint": "~0.2.0",
+	  "grunt-contrib-watch": "~0.6.1",
+	  "grunt-csscomb": "~3.0.1",
+	  "grunt-sass": "~1.0.0",
+	  "grunt-scsslint": "~0.1.0",
+    "grunt-contrib-symlink": "~0.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
 	"scripts": {
-		"postinstall": "grunt githooks"
+		"postinstall": "grunt hooksInstall"
 	}
 }

@@ -1,0 +1,213 @@
+# Default application configuration that all configurations inherit from.
+linters:
+  BemDepth:
+    severity: error
+    max_elements: 3
+
+  Indentation:
+    enabled: true
+    severity: error
+    allow_non_nested_indentation: false
+    character: 'tab'
+    width: 1
+
+  Shorthand:
+    enabled: warning
+    severity: error
+
+  BorderZero:
+    severity: warning
+    enabled: true
+    convention: none
+
+  ColorKeyword:
+    enabled: false
+
+  ColorVariable:
+    severity: error
+    enabled: true
+
+  Comment:
+    enabled: false
+
+  DeclarationOrder:
+    enabled: false
+
+  DisableLinterReason:
+    severity: error
+    enabled: true
+
+  DuplicateProperty:
+    severity: error
+    enabled: true
+
+  ElsePlacement:
+    enabled: false
+
+  EmptyLineBetweenBlocks:
+    severity: error
+    enabled: true
+
+  EmptyRule:
+    enabled: false
+
+  ExtendDirective:
+    enabled: false
+
+  FinalNewline:
+    severity: error
+    enabled: true
+
+  HexLength:
+    enabled: false
+
+  HexNotation:
+    severity: warning
+    enabled: true
+
+  HexValidation:
+    severity: error
+    enabled: true
+
+  IdSelector:
+    severity: error
+    enabled: true
+
+  ImportantRule: # you should avoid this limitation with comment for DisableLinter
+    severity: error
+    enabled: true
+
+  ImportPath:
+    severity: error
+    enabled: true
+
+  Indentation:
+    severity: error
+    enabled: true
+    character: tab
+    width: 1
+
+  LeadingZero:
+    severity: warning
+    enabled: true
+
+  MergeableSelector:
+    enabled: false
+
+  NameFormat:
+    severity: error
+    enabled: true
+
+  NestingDepth:
+    severity: error
+    enabled: true
+    max_depth: 4
+
+  PlaceholderInExtend:
+    severity: error
+    enabled: true
+
+  PropertyCount:
+    enabled: false
+
+  PropertySortOrder: # we should use alphabetical order
+    severity: error
+    enabled: true
+    order: smacss
+
+  PropertySpelling:
+    severity: error
+    enabled: true
+
+  PropertyUnits:
+    enabled: false
+
+  QualifyingElement:
+    severity: error
+    enabled: true
+
+  SelectorDepth:
+    severity: error
+    enabled: true
+    max_depth: 4
+
+  SelectorFormat:
+    severity: error
+    enabled: true
+    convention: ^([\.\%]?[a-z]*[-]?[a-z0-9\-]*)(\.[a-z0-9\-]*)?(__[a-z0-9]*[-]?[a-z0-9\-]*)?(_[a-z0-9]*[-]?[a-z0-9\-]*)?(\:[a-z]*)*$
+    convention_explanation: 'pattern for class name "b-block__element_mod"'
+    ignored_types: placeholder
+
+  Shorthand:
+    severity: warning
+    enabled: true
+
+  SingleLinePerProperty:
+    severity: error
+    enabled: true
+
+  SingleLinePerSelector:
+    severity: error
+    enabled: true
+
+  SpaceAfterComma:
+    enabled: false
+
+  SpaceAfterPropertyColon:
+    severity: error
+    enabled: true
+
+  SpaceAfterPropertyName:
+    severity: error
+    enabled: true
+
+  SpaceBeforeBrace:
+    severity: error
+    enabled: true
+
+  SpaceBetweenParens:
+    severity: error
+    enabled: true
+
+  StringQuotes:
+    severity: error
+    enabled: true
+    style: double_quotes
+
+  TrailingSemicolon:
+    severity: error
+    enabled: true
+
+  TrailingWhitespace:
+    severity: error
+    enabled: true
+
+  TrailingZero:
+    enabled: false
+
+  UnnecessaryMantissa:
+    severity: error
+    enabled: true
+
+  UnnecessaryParentReference:
+    severity: error
+    enabled: true
+
+  UrlFormat:
+    severity: error
+    enabled: true
+
+  UrlQuotes:
+    severity: error
+    enabled: true
+
+  VariableForProperty:
+    severity: error
+    enabled: true
+
+  VendorPrefix:
+    enabled: false
+
+  ZeroUnit:
+    severity: error
+    enabled: true

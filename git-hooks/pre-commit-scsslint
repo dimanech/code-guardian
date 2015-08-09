@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# Run SASS validation before commit.
+
+# For validating all sass files use files=$(git diff --cached --name-only --diff-filter=ACMR -- *.scss **/*.scss)
+# Validate only reskin files
+files=$(git diff --cached --name-only --diff-filter=ACMR -- _re-*.scss **/_re-*.scss)
+pass=true
+
+
+if [ "$files" != "" ]; then
+    for file in ${files}; do
+        result=$(scss-lint ${file})
+
+        if [ "$result" != "" ]; then
+            echo "$result"
+            echo "\n"
+            pass=false
+        fi
+    done
+fi
+
+if $pass; then
+    exit 0
+else
+    echo "[GUARD]: Some scss files are invalid. Please fix errors and try committing again."
+    exit 1
+fi

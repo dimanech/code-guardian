@@ -1,6 +1,4 @@
-node_modules
-build
-
+# Avoid to commit any binar data
 *.psd
 *.zip
 *.7zip
@@ -10,13 +8,14 @@ build
 *.diff
 *.err
 *.orig
-*.log
 *.rej
 *.swo
 *.swp
+*.sass-cache
 *.vi
 *~
-*.sass-cache
+*.gem
+*.rbc
 
 .DS_Store
 ._*
@@ -28,4 +27,19 @@ Thumbs.db
 .pydevproject
 .externalToolBuilders
 .settings
-/nbproject/private/
+RemoteSystemsTempFiles
+.metadata
+
+# Dependency directory
+# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
+node_modules
+
+# Logs
+logs
+*.log
+
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Project specific
+css

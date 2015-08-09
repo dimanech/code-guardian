@@ -2,31 +2,69 @@
 
 module.exports = function(grunt) {
 
+	var cartridgePath = "./css/";
+
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-		csslint: {
+		// Add symlink to git hook directory after project dependency installing
+		symlink: {
 			options: {
-				csslintrc: 'csslintrc.json'
+				overwrite: true
 			},
-			strict: {
-				options: {
-					import: 2
-				},
-				src: ['css/**/*.css']
+			expanded: {
+				files: [
+					{
+						expand: true,
+						overwrite: true,
+						cwd: './git-hooks',
+						src: ['pre-commit', 'commit-msg', 'pre-push'],
+						dest: '.git/hooks'
+					}
+				]
 			}
 		},
 
-		githooks: {
-			all: {
-				'pre-commit': 'csslint'
+		// file watchers
+
+		sass: {
+			options: {
+				sourceMap: true,
+				outputStyle: 'nested'
+			},
+			dist: {
+				files: {
+					'./css/code-guardian.css': cartridgePath + '/css/code-guardian.scss'
+				}
 			}
-		}
+		},
+
+		csscomb: {
+			options: {
+				config: './.csscomb-prod.json'
+			},
+			dynamic_mappings: {
+				expand: true,
+				cwd: cartridgePath + 'css/code-guardian.css',
+				src: '*.css',
+				dest: cartridgePath + 'css/code-guardian.css'
+			}
+		},
+
+		watch: {
+			sassWatch: {
+				files: [cartridgePath + 'sass/**/*.scss'],
+				tasks: ['sass', 'csscomb']
+			}
+		},
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-csslint');
-	grunt.loadNpmTasks('grunt-githooks');
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-symlink');
+	grunt.loadNpmTasks('grunt-sass');
+	grunt.loadNpmTasks('grunt-csscomb');
 
-	grunt.registerTask('default', ['githooks', 'csslint']);
+	grunt.registerTask('hooksInstall', ['symlink']);
+	grunt.registerTask('default', ['watch']);
 
 };

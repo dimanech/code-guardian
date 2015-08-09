@@ -1,0 +1,22 @@
+#!/bin/sh
+
+HOOKS="pre-commit-scsslint pre-commit-nonascii pre-commit-encoding"
+SCRIPTPATH="$(pwd)/git-hooks/"
+
+echo "Error: file $SCRIPTPATH not found."
+
+for hook in $HOOKS
+do
+    echo "[GUARD]: Running hook: $hook"
+    # run hook if it exists
+    # if it returns with nonzero exit with 1 and thus abort the commit
+    if [ -f "$SCRIPTPATH/$hook" ]; then
+        "$SCRIPTPATH/$hook"
+        if [ $? != 0 ]; then
+            exit 1
+        fi
+    else
+        echo "Error: file $hook not found."
+        exit 1
+    fi
+done
